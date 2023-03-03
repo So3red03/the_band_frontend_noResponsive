@@ -1,0 +1,423 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
+	line-height: 1.5;
+}
+ul {
+	list-style: none;
+}
+.text-white {
+	color: #fff !important;
+}
+/* Dùng để sửa lỗi thường gặp float tránh các container trùng lên nhau 
+	có thể dùng overflow: hidden trong member-list */
+
+.clear {
+	clear: both;
+}
+.wrapper {
+	height: 500%;
+}
+
+/* Phần header trong the band */
+.header {
+	height: 46px;
+	background-color: #000;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	/* khi có nhiều position có khả năng ảnh bị cao hơn và che mất so với header nên phải dùng z-index */
+	z-index: 1;
+}
+.header .navigation {
+	display: inline-block;
+}
+.header .navigation > li {
+	display: inline-block;
+}
+.header .navigation > li > a {
+	color: #fff;
+	text-transform: uppercase;
+}
+.header .navigation li {
+	position: relative;
+}
+.header .navigation li a {
+	text-decoration: none;
+	line-height: 46px;
+	padding: 0px 24px;
+	display: inline-block;
+}
+.header .navigation li ul.subnav {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #fff;
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+	min-width: 160px;
+}
+.header .navigation li ul.subnav li a {
+	color: #000;
+	padding: 0 16px;
+	display: block;
+	width: 100%;
+	line-height: 38px;
+	font-size: 0.9rem;
+}
+.header .search-btn {
+	float: right;
+}
+.header .search-btn .search-icon {
+	line-height: 46px;
+	color: #fff;
+	font-size: 0.8rem;
+	padding: 0 24px;
+}
+.header .search-btn:hover .search-icon {
+	color: #fff;
+	background-color: #f44336 !important;
+	cursor: pointer;
+}
+.header .navigation li:hover .subnav {
+	display: block;
+}
+.header .navigation > li:hover > a,
+.header .navigation li ul.subnav li:hover a {
+	background-color: #eee;
+	color: #000;
+}
+
+.wrapper .slide {
+	position: relative;
+	margin-top: 46px;
+	background: url('../img/slider/ny.jpg') top center / cover no-repeat;
+	/* Kích thước 50% chiều ngang của chính nó */
+	padding-top: 50%;
+}
+.wrapper .slide .text-content {
+	position: absolute;
+	left: 50%;
+	bottom: 47px;
+	color: #fff;
+	text-align: center;
+	transform: translate(-50%, 0);
+}
+.wrapper .slide .text-heading {
+	font-family: 'Segoe UI', Arial, sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	margin: 10px 0;
+}
+.wrapper .slide .text-description {
+	font-family: 'Segoe UI', Arial, sans-serif;
+	font-size: 0.99rem;
+	font-weight: bolder;
+	margin-top: 20px;
+}
+
+/* The band  */
+.content .content-section {
+	max-width: 800px;
+	padding: 64px 16px 16px;
+	margin: 0 auto;
+}
+.content-section h2.section-heading {
+	font-family: 'Segoe UI', Arial, sans-serif;
+	letter-spacing: 4px;
+	font-weight: 400;
+	margin: 10px 0;
+	text-align: center;
+	font-size: 30px;
+}
+.content-section .section-sub-heading {
+	margin: 15px 0;
+	text-align: center;
+	font-size: 14px;
+	opacity: 0.6;
+}
+.content-section p.section-discription {
+	width: 768px;
+	height: 135px;
+	text-align: justify !important;
+	margin: 15px auto;
+	font-size: 14.7px;
+}
+.content-section .members-list {
+	padding: 32px 0px 90px 0;
+	overflow: hidden;
+}
+.content-section .members-list .member-items {
+	float: left;
+	width: 33.33333%;
+	text-align: center !important;
+	padding-top: 20px;
+}
+.content-section .members-list .member-name {
+	font-size: 14px;
+}
+.content-section .members-list .member-img {
+	border-radius: 4px;
+	margin-top: 15px;
+	width: 154px;
+}
+/* Tour section */
+.tour-section {
+	background-color: #000;
+}
+.tour-section .content-section .ticket-lists {
+	background-color: #fff;
+	margin-top: 35px;
+}
+.tour-section .content-section .ticket-lists li {
+	font-size: 14px;
+	color: #757575 !important;
+	padding: 8px 16px;
+	border: 1px solid #ddd;
+}
+.tour-section .content-section .ticket-lists li .sold-out {
+	background-color: #f44336 !important;
+	color: #fff !important;
+	margin-left: 16px;
+	padding: 0 8px;
+	display: inline-block;
+}
+.tour-section .content-section .ticket-lists li .quantity {
+	background-color: #000;
+	color: #fff;
+	padding: 0 8px;
+	border-radius: 50%;
+	margin-right: 16px !important;
+	float: right;
+}
+/* Places */
+.tour-section .places-list {
+	padding: 16px 8px 96px;
+	display: flex;
+	justify-content: center;
+}
+.places-list .place-item {
+	float: left;
+	padding: 0 8px;
+	margin-bottom: 16px;
+	margin-right: 1px;
+	width: 260.5px;
+}
+.place-item img {
+	width: 100%;
+	display: block;
+}
+.place-item img:hover {
+	opacity: 0.6;
+}
+.place-item .place-body {
+	color: #000;
+	background-color: #fff;
+	padding: 20px 18px;
+}
+.place-item .place-body .place-heading {
+	font-weight: 300px;
+	font-size: 15px;
+}
+.place-item .place-body .place-time {
+	opacity: 0.6;
+	margin: 15px 0;
+	font-size: 15px;
+}
+.place-item .place-body .place-discription {
+	font-size: 15px;
+	margin: 15px 0;
+}
+.place-item .place-body .ticket-btn {
+	padding: 12px 16px 10px 18px;
+	background-color: #000;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	font-size: 15px;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+}
+.place-item .place-body .ticket-btn:hover {
+	background-color: #ccc !important;
+	color: #000;
+}
+
+/* Modal form for buying tickets */
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+/* javascript click vào hiện buy tickets lên  */
+.modal.open {
+	display: flex;
+}
+
+.modal .modal-container {
+	width: 900px;
+	min-height: 200px;
+	max-width: calc(100% - 40px);
+	background-color: #fff;
+	position: relative;
+	animation: modalupdown ease 0.4s;
+}
+.modal .modal-container .modal-header {
+	background-color: #009688 !important;
+	height: 129px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.modal .modal-container .modal-header h2 {
+	font-family: 'Segoe UI', Arial, sans-serif;
+	font-weight: 400;
+	font-size: 30px;
+	margin: 10px 0;
+	letter-spacing: 4px;
+	color: #fff;
+}
+.modal .modal-container .modal-close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #fff;
+	padding: 14px 17px;
+	cursor: pointer;
+	font-size: 17px;
+}
+.modal .modal-container .modal-close:hover {
+	color: #000 !important;
+	background-color: #ccc !important;
+}
+.modal .modal-body {
+	padding: 0 16px;
+}
+
+.modal .modal-body .modal-input {
+	border: 1px solid #ccc !important;
+	display: block;
+	width: 100%;
+	padding: 8px;
+}
+.modal .modal-body .modal-label {
+	display: block;
+	font: 15px;
+	margin: 15px 0;
+}
+.modal .modal-container .buy-btn {
+	margin: 16px 0;
+	padding: 16px;
+	color: #fff;
+	background-color: #009688 !important;
+	width: 100%;
+	font-size: 14px;
+	font-family: 'Lato', sans-serif;
+	border: none;
+}
+.modal .modal-container .buy-btn:hover {
+	color: #000;
+	background-color: #ccc !important;
+	cursor: pointer;
+}
+
+.modal .modal-container .modal-footer {
+	float: right;
+	margin: 15px;
+}
+.modal .modal-container .modal-footer .modal-help a {
+	color: #2196f3 !important;
+}
+
+@keyframes modalupdown {
+	from {
+		opacity: 0;
+		transform: translateY(-200px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Contact section */
+.row {
+	margin: 0 -8px -8px 0;
+}
+.col {
+	float: left;
+}
+.col-half {
+	width: 50%;
+}
+.col-full {
+	width: 100%;
+}
+.contact-info {
+	font-size: 18px;
+	font-family: 'Lato', sans-serif;
+}
+.contact-info p i {
+	display: inline-block;
+	width: 30px;
+}
+.col {
+	padding: 0 8px;
+}
+.col-full {
+	margin-top: 8px;
+}
+.contact-form .input-form {
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 8px;
+}
+.contact-form {
+	margin-bottom: 96px;
+}
+.contact-form .submit-btn {
+	color: #fff !important;
+	background-color: #000 !important;
+	float: right;
+	margin: 16px 0;
+	padding: 8px 16px;
+	cursor: pointer;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+}
+.contact-form .submit-btn:hover {
+	border: 1px solid #ccc;
+	color: #000 !important;
+	background-color: #ccc !important;
+}
+
+/* Footer section */
+.footer {
+	text-align: center;
+	padding: 64px 16px;
+}
+.footer .social-lists {
+	font-size: 24px;
+	opacity: 0.6;
+}
+.footer .statement,
+.footer .statement a {
+	color: #000;
+	opacity: 0.7;
+	font-family: 'Lato', sans-serif;
+	margin: 15px 0 15px;
+}
